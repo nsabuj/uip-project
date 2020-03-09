@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+
+    <!-- Website ICON -->
+    <link
+      rel="shortcut icon"
+      href="../images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon" />
+
+    <!-- Additional Fonts: FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- Website Title -->
+    <title>The Flying Dutchman</title>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" type="text/css" href="../css/customer.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../css/login.css" /> -->
+
+    <!-- JQUERY INITIALIZATION -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <!-- Internationalization Scripts -->
+    <script type="text/javascript" src="../js/language/languages.js"></script>
+    <script
+      type="text/javascript"
+      src="../js/language/changeLanguage.js"
+    ></script>
+
+    <!-- Drag and Drop Scripts -->
+    <script type="text/javascript" src="../js/dragDrop/dnd.js"></script>
+
+    <!-- Script for password conversion from hash -->
+    <script src="../js/md5.min.js"></script>
+
+    <!-- Database Scripts -->
+    <script type="text/javascript" src="../database/database.js"></script>
+    <script type="text/javascript" src="../database/newLoader.js"></script>
+    <script type="text/javascript" src="../database/init.js"></script>
+
+    <!-- The Undo/Redo Scripts -->
+    <script type="text/javascript" src="../js/undo/undoStack.js"></script>
+    <script
+      type="text/javascript"
+      src="../js/undo/undoFunctionality.js"
+    ></script>
+
+    <!-- Customer View functions -->
+    <script type="text/javascript" src="../js/orders/orders.js"></script>
+    <script type="text/javascript" src="../js/customerMenu.js"></script>
+
+    <!-- Modal Script -->
+    <script type="text/javascript" src="../js/CustomerModal.js"></script>
+
+    <!-- VIP Payment Script -->
+    <script type="text/javascript" src="../js/vipPayment.js"></script>
+
+    <!-- User check script -->
+    <script type="text/javascript" src="../js/userCheck.js"></script>
+
+    <!-- Initialization Scripts -->
+    <script>
+      // window.localStorage.clear();
+      // Initialize databse and store to local storage if not already exists
+      initDatabase();
+
+      // Create action stack for undo redo
+      initUndoRedoStack();
+
+      // Translate page according to default language and setup so that language changes on selection
+      initInternationalization();
+      
+      // Initialize Menu items
+      initCustomerMenu();
+    </script>
+    
+  </head>
+  <body>
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modalContentHead">
+          <span class="close-button">×</span>
+          <h2 id="modalHeading" style="color:black"></h2>
+        </div>
+        <div id="checkout-form">
+          <h3 id="cart-message"></h3>
+        </div>
+        <div id="login-form">
+          <form action="index.html" method="post" autocomplete="false">
+            <input
+              id="username"
+              class="input-box"
+              name="username"
+              type="text"
+              placeholder="User Name"
+            />
+            <input
+              id="password"
+              class="input-box"
+              name="password"
+              type="password"
+              placeholder="Password"
+            />
+            <p id="error"></p>
+            <p id="logged"></p>
+           
+          </form>
+        </div>
+
+        <div class="modal-footer">
+          <button
+            id="yes"
+            class="transactionButton"
+            onclick="doTransaction()"
+          ></button>
+          <button id="no" class="transactionButton noToggle"></button>
+          <div id="signin" class="button" onclick="checkUser()"></div>
+          <input
+            id="recharge"
+            class="input-box"
+            name="recharge"
+            type="number"
+            min="0"
+            max="10000"
+            step="100"
+            oninput="rechargeInput()"
+            placeholder="Amount"
+          />
+          <button
+            id="rechargeButton"
+            class="rechargeButton"
+            onclick="rechargeAccount()"
+          ></button>
+          <div class="smallTick">
+            <img id="loggedInImage" src="../images/tick.gif" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Modal -->
+
+    <!-- Header -->
+    <div class="headerContainer">
+      <!-- <img src="../images/theflyingdutchman-logo.png" alt="logo" class="logo" /> -->
+      <div class="flagContainer">
+        <span id="en" class="flag" value="en" onclick="changeLanguageTo(this)">
+          <a href="#"
+            ><img class="manImg" src="../images/uk.png"
+          /></a>
+        </span>
+        <span id="de" class="flag" value="de" onclick="changeLanguageTo(this)">
+          <a href="#"><img class="manImg" src="../images/sweden.png"/></a>
+        </span>
+      </div>
+      <span class="vipButtonContainer">
+        <button id="signout" class="signoutbutton" onclick="signout()"></button>
+      </span>
+      <span class="vipButtonContainer">
+        <button id="vip" class="trigger vipbutton"></button>
+      </span>
+    </div>
+    <!-- End Header -->
+
+    <!-- Welcome Heading -->
+    <div style="display: flex;justify-content: center;">
+      <h1 id="welcome-title" style="margin: 2% auto;font-family: inherit;"></h1>
+    </div>
+    <!-- End Welcome Heading -->
+
+    <!-- Main Body Container -->
+    <div id="menu" class="container">
+      <!-- Flex Grid container -->
+      <div class="flex-grid">
+        <!-- Menu Container -->
+        <div class="col">
+          <!-- Tabs (Menu Navigation) -->
+          <div class="menuNav">
+            <nav>
+              <ul class="nav-list">
+                <li class="menuTab active" id="allTab"></li>
+                <li class="menuTab" id="beerTab"></li>
+                <li class="menuTab" id="spiritTab"></li>
+                <li class="menuTab" id="wineTab"></li>
+              </ul>
+            </nav>
+          </div>
+          <!-- End Tabs -->
+
+          <!-- Menu Body -->
+          <div class="menuCard">
+            <div class="menu" id="allmenu"></div>
+            <div class="menu" id="beers"></div>
+            <div class="menu" id="spirits"></div>
+            <div class="menu" id="wines"></div>
+          </div>
+        </div>
+        <!-- End Menu Container -->
+
+        <!-- Cart -->
+        <section id="cartSection" class="col main">
+          <!-- Undo Redo Container which has the undo redo functionality -->
+          <div class="undoRedoContainer">
+            <button
+              id="undoButton"
+              class="doButtons"
+              onclick="undoCartUpdate()"
+            ></button>
+            <button
+              id="redoButton"
+              class="redoButton doButtons"
+              onclick="redoCartUpdate()"
+            ></button>
+          </div>
+          <!-- End Undo Redo Container -->
+
+          <!-- Separator between Undo Redo and Cart Heading  -->
+          <hr style="border-color: #4f4942;" />
+
+          <!-- Cart Heading -->
+          <div class="cartHeading">
+            <h3 id="orderHeading" class="orderHeading"></h3>
+            <div class="credit">
+              <p id="credit"></p>
+              <p id="account">00.00</p>
+              <p>SEK</p>
+            </div>
+          </div>
+          <!-- End Cart Heading -->
+
+          <!-- Seperator between cart items and heading -->
+          <hr style="border-color: #4f4942;" />
+
+          <!-- Cart main container. This is where items will be dragged into and dropped -->
+          <div
+            id="cart"
+            class="cart"
+            ondrop="dropMenu(event)"
+            ondragover="allowDrop(event)"
+            ondragenter="handleDragEnter(event)"
+            ondragleave="handleDragLeave(event)"
+          ></div>
+          <!-- End Cart Main -->
+
+          <!-- Separator for Checkout section -->
+          <hr style="border-color: #4f4942;" />
+
+          <!-- Checkout Section -->
+          <div class="checkoutSection">
+            <button
+              id="checkout"
+              class="trigger2 checkoutbutton"
+              type="button"
+              onclick="vipPayment(window.sessionStorage.getItem('currentUser'));"
+            ></button>
+
+            <div id="display">
+              <span id="total">00.00</span>
+              <span>SEK</span>
+            </div>
+          </div>
+          <!-- End Checkout Section -->
+        </section>
+        <!-- End Cart -->
+      </div>
+      <!-- End Flex Grid Container -->
+    </div>
+    <!-- End Main Body Container -->
+  </body>
+</html>
