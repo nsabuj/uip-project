@@ -3,7 +3,7 @@ var DATABASE = {
          {
             "user_id": "2",
             "credentials": "0",
-            "password": "b690bc2447d40ea8a6f78345eb979a28",
+            "password": "123456",
             "username": "jorass",
             "first_name": "Jory",
             "last_name": "Assies",

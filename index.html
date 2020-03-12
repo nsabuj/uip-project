@@ -14,7 +14,7 @@
 
 			<ul class="navbar-right">
 				
-				<li><a href="login.html">Logout</a></li>
+				<li><a href="" id="logout">Logout</a></li>
 	
 				
 			</ul>
@@ -23,7 +23,7 @@
 
 		<section class="body">
               <div class="left">
-              	  <div class="table">
+              	  <div class="table" id="table1">
               	  	<div class="tab-panel">
               	  		<div class="panel-header">
               	  			Table 1
@@ -38,7 +38,7 @@
               	  		</div>
               	  	</div>
               	  </div>
-              	  <div class="table">
+              	  <div class="table" id="table2">
               	  	<div class="tab-panel">
               	  		<div class="panel-header">
               	  			Table 2
@@ -53,7 +53,7 @@
               	  		</div>
               	  	</div>
               	  </div>
-              	  <div class="table">
+              	  <div class="table" id="table3">
               	  	<div class="tab-panel">
               	  		<div class="panel-header">
               	  			Table 3
@@ -71,10 +71,10 @@
               </div>
               <div class="right">
               	 <ul class="menu">
-				<li><a href="">All</a></li>
-				<li><a href="">Beer</a></li>
-				<li><a href="">Spirits</a></li>
-				<li><a href="">Wine</a></li>
+				<li><a href="" class="menu-item" id="all">All</a></li>
+				<li><a href="" class="menu-item" id="beers" >Beer</a></li>
+				<li><a href="" class="menu-item" id="spirits">Spirits</a></li>
+				<li><a href="" class="menu-item" id="wines">Wine</a></li>
 				
 			</ul>
 			  <div class="bar-menu">
@@ -104,5 +104,155 @@
 
 			</div>
 		</section>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="database/database.js"></script>
+<script src="js/custom.js"></script> 
+
+<script>
+       $(function(){
+                var loggedin = localStorage.getItem('loggedin');
+                 if(!loggedin || loggedin==='false'){
+           window.location.href = "login.html";
+           
+        }
+
+                   $('.menu-item').click(function(e){
+                      e.preventDefault();
+                      var id=$(this).attr('id');
+                      
+                      $('.bar-menu').html('');
+                      if(id=='spirits'){
+                      var data=[];       
+                      data=data.concat(BEVERAGES.spirits);
+                      }else if(id=='beers'){
+                       var data=[];
+                       data=data.concat(BEVERAGES.beers);
+                      }else if(id=='wines'){
+                       var data=[];
+                       data=data.concat(BEVERAGES.wines);
+                      }else{
+                       var data=[];
+                       
+                       data=data.concat(BEVERAGES.beers,BEVERAGES.wines,BEVERAGES.spirits);
+                      }
+
+                     changelist(data);
+
+
+
+                   });
+
+
+                                      /// show the list by default
+         var defdata=[];
+         defdata=defdata.concat(BEVERAGES.beers,BEVERAGES.wines,BEVERAGES.spirits);
+         
+        var list='';
+        changelist(defdata);
+
+// drag and drop ends
+        function calculate_total(elem){
+          var childs= elem.children();
+          var child_ids=[];
+           //console.log(childs.length);
+            for (i = 0; i < childs.length; i++) {
+             var item_id= $(childs[i]).attr('id');
+             child_ids.push(item_id);
+
+          }
+
+          return child_ids;
+       }
+
+       function update_total(ids){
+         var total=0;
+         var data=[];
+         data=data.concat(BEVERAGES.beers,BEVERAGES.wines,BEVERAGES.spirits);        
+         ids.forEach(id => {
+          let resultObject = search(id, data);
+          total=total+parseFloat(resultObject.priceinclvat);
+         
+         });
+         total=total.toFixed(2);
+
+         return total;
+       }
+
+
+        search = (key, inputArray) => {
+  for (let i=0; i < inputArray.length; i++) {
+      if (inputArray[i].nr === key) {
+          return inputArray[i];
+                       }
+                 }
+                   }
+
+
+        // end default data listing
+
+
+
+function changelist(data){
+
+               var list='';
+
+               data.forEach(element => { 
+         list += '<li class="draggable-item" id="'+element.nr+'">'+element.name+'</li>';
+        } 
+              );
+              
+
+        $('.bar-menu').html(list);
+
+$('.draggable-item').draggable({
+    revert: "invalid",
+    stack: ".draggable-item",
+    helper: 'clone'
+});
+$('.panel-body').droppable({
+    accept: ".draggable-item",
+    drop: function (event, ui) {
+        var droppable = $(this);
+        var draggable = ui.draggable;
+        // Move draggable into droppable
+        draggable.clone().appendTo(droppable);
+
+        draggable.css({top: '5px', left: '5px'});
+        var ids=calculate_total(droppable);
+        $(this).parents('.tab-panel').find('.amount').html(update_total(ids));
+        var id=$(this).parents('.table').attr('id');
+        localStorage.setItem(id, ids);
+        localStorage.setItem('latest', id);
+        
+
+    }
+
+});
+}
+
+
+function redo(id){
+var ids=localStorage.getItem(id);
+var last_id=ids[ids.length - 1];
+console.log(ids.length);
+console.log(last_id);
+
+}
+
+
+function undo(){
+
+}
+
+ });
+
+
+
+
+
+</script>             
 	</body>
 </html>
