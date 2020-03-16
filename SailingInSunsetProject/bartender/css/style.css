@@ -2,6 +2,9 @@
 body{
 	margin: 0;
 	overflow-x: hidden;
+	background: url('../2.jpg');
+	background-attachment: fixed;
+	color: #fff;
 }
 section{
 	width: 100%;
@@ -11,9 +14,14 @@ section{
 	clear: both;
 
 }
+.hide{
+	display: none;
+}
+
 .header{
 	height: 80px;
-	background: #000;
+    background: #96842bc7;
+    font-weight: 700;
 }
 .header ul.navbar{
 	list-style: none;
@@ -32,6 +40,7 @@ section{
 .header ul.navbar-right{
 	width: 50%;
 	float: right;
+	list-style: none;
 }
 
 .header ul.navbar-right li a{
@@ -57,48 +66,73 @@ text-decoration: none;
 	height: 500px;
 	width: 90%;
 	overflow-y: auto;
+	background: #be5d17ad;
+}
+
+.bar-menu .draggable-item{
+	cursor: all-scroll;
 }
 .body .table{
 	margin-bottom:20px;
 }
 
 .tab-panel .panel-header{
-	background: #ccc;
+	background: #96842bc7;
 	padding: 10px;
 	text-align: center;
 }
 
 .tab-panel .panel-footer{
-	background: #ccc;
+	background: #96842bc7;
 	padding: 10px 5px;
 	text-align: center;
 }
 
-.tab-panel .panel-body{
-	min-height: 50px;
-	background: #eee;
+.tab-panel .panel-body-wrapper{
+	background: #be5d17ad;
+  height: auto;
+  padding: 20px;
 }
+
+.tab-panel .panel-body{
+	
+	border: 3px dotted #fff;
+    min-height: 50px;
+    margin: 10px;
+    list-style: decimal;
+    color: #fff;
+    padding: 5px;
+    max-height: 120px;
+    overflow-x: auto;
+    overflow-y: scroll;
+
+}
+
+
+
+
 
 .body .right .menu{
 	
-	background: #666666;
+	background: #96842bc7;
 	list-style: none;
-	height: 60px;
+	height: 40px;
 	margin: 0;
 	width: 100%;
+	font-weight: 700;
 }
 
 .body .right .menu li a{
 	text-decoration: none;
 	float: left;
-	padding: 20px 30px;
+	padding: 12px 30px;
 	color: #000;
 }
 
 .footer .button-group{
 	float: right;
-	margin-right:150px; 
-	width: 300px;
+	margin-top: 30px;
+	width: 470px;
 }
 
 .footer .button-group .left{
@@ -117,15 +151,28 @@ text-decoration: none;
 	float: left;
 }
 
+button.btn, select{
+height: 40px;
+    padding: 5px;
+    background: #ac2d2dd1;
+    font-weight: bold;
+    color: #fff;
+}
+
+
 .bar-menu .draggable-item{
 	list-style: none;
 	padding: 5px 10px;
 	border: 1px dotted #000; 
 }
 
-.tab-panel .panel-body .draggable-item{
+.tab-panel .panel-body .draggable-item
 {
 	width: 300px;
 	list-style: none;
+}
+
+.table-toggle i.fa{
+	color: #fff;
 }
 

@@ -3,8 +3,8 @@
 // We use (global) variables to store the data. This is not generally advisable, but has the advantage that the data is easy to access through simple APIs. Also, when storing as local storage, all data is stored as strings, which might be adding some complexity.
 function allUserNames() {
   var nameCollect = [];
-  for (i = 0; i < DB.users.length; i++) {
-    nameCollect.push(DB.users[i].username);
+  for (i = 0; i < DATABASE.users.length; i++) {
+    nameCollect.push(DATABASE.users[i].username);
   }
   return nameCollect;
 }
@@ -18,28 +18,28 @@ function userDetails(userName) {
   var account;
 
   // First we find the user ID of the selected user. We also save the index number for the record in the JSON structure.
-  for (i = 0; i < DB.users.length; i++) {
-    if (DB.users[i].username == userName) {
-      userID = DB.users[i].user_id;
+  for (i = 0; i < DATABASE.users.length; i++) {
+    if (DATABASE.users[i].username == userName) {
+      userID = DATABASE.users[i].user_id;
       userIndex = i;
     }
   }
   if (userID == null) return "empty";
   // We get the current account status from another table in the database, account. We store this in a variable here for convenience.
-  for (i = 0; i < DB.account.length; i++) {
-    if (DB.account[i].user_id == userID) {
-      account = DB.account[i].creditSEK;
+  for (i = 0; i < DATABASE.account.length; i++) {
+    if (DATABASE.account[i].user_id == userID) {
+      account = DATABASE.account[i].creditSEK;
     }
   }
 
   // This is the way to add the details you want from the DATABASE into your own data structure. If you want to change the details, then just add or remove items accordingly below.
   userCollect.push(
-    DB.users[userIndex].user_id,
-    DB.users[userIndex].username,
-    DB.users[userIndex].first_name,
-    DB.users[userIndex].last_name,
-    DB.users[userIndex].email,
-    DB.users[userIndex].password,
+    DATABASE.users[userIndex].user_id,
+    DATABASE.users[userIndex].username,
+    DATABASE.users[userIndex].first_name,
+    DATABASE.users[userIndex].last_name,
+    DATABASE.users[userIndex].email,
+    DATABASE.users[userIndex].password,
 
     account
   );

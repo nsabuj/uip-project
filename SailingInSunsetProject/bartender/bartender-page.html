@@ -1,0 +1,74 @@
+<html>
+	<head>
+		<title></title>
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- fontawesome icons -->
+              
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<section class="header"> <!-- section head starts -->
+			<ul class="navbar">
+				<li><a href="index.html" class="active">Inventory</a></li>
+				<li><a href="">History</a></li>
+				<li><a href="bartender-page.html">Bartender Page</a></li>
+				
+			</ul>
+
+			<ul class="navbar-right">
+				
+				<li><a href="" id="logout">Logout</a></li>
+	
+				
+			</ul>
+
+		</section>   <!--end of section head -->
+
+		<section class="body">
+              <div class="left">
+                    <h3 class="name"></h3>
+                    <p>Email: <span class="email"> </span></p>
+                    <p>Username: <span class="username"> </span></p>
+              </div>
+              <div class="right">
+            
+
+              </div>
+
+		</section>
+
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="database/database.js"></script>
+<script src="database/newLoader.js"></script>
+<script src="js/custom.js"></script> 
+
+<script>
+       $(function(){
+                var loggedin = localStorage.getItem('loggedin');
+                 if(!loggedin || loggedin==='false'){
+           window.location.href = "login.html";
+           
+        }
+       let username =localStorage.getItem('username');
+       console.log(allUserNames());
+        var userdetails= userDetails(username);
+        console.log(userdetails);
+       $('.name').html(userdetails[2]+' '+userdetails[3]);
+       $('.email').html(userdetails[4]);
+       $('.username').html(userdetails[1]);
+
+
+ });
+
+
+
+
+
+
+
+
+
+</script>             
+	</body>
+</html>
