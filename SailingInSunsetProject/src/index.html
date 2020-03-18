@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-  
+    <link rel="stylesheet" href="../css/style.css">
   </head>
   <body>
-    <div>
-      <div>
-        <h1>Customers</h1>
-        <a id="customerButton" href="customer.html" class="button">Home</a>
-      </div>
-      <div>
-        <h1>Bartender</h1>
-        <a id="barButton" href="../bartender/index.html" class="button">Home</a>
+
+    <!-- Internationalization Scripts -->
+    <script type="text/javascript" src="../js/language/languages.js"></script>
+    <script
+      type="text/javascript"
+      src="../js/language/changeLanguage.js"
+    ></script>
+
+    <script>
+      // Translate page according to default language and setup so that language changes on selection
+      initInternationalization();
+    </script>
+
+    <div class="headerContainer">
+      <!-- <img src="../images/theflyingdutchman-logo.png" alt="logo" class="logo" /> -->
+      <div class="flagContainer">
+        <span id="en" class="flag" value="en" onclick="changeLanguageTo(this)">
+          <a href="#"
+            ><img class="manImg" src="../images/uk.png"
+          /></a>
+        </span>
+        <span id="de" class="flag" value="de" onclick="changeLanguageTo(this)">
+          <a href="#"><img class="manImg" src="../images/sweden.png"/></a>
+        </span>
       </div>
     </div>
+    <!-- End Header -->
+
+<div class="background">
+  <div class="divbutton">
+        <button onclick="myFunction()" class="button">
+          <a id="customerButton" href="customer.html" class="button">Customers</a>
+        </button>
+
+        <button onclick="myFunction()" class="button">
+          <a id="barButton" href="../bartender/index.html" class="button">Bartender</a>
+        </button>
+      </div>
+  </div>
   </body>
 </html>
