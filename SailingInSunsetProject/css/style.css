@@ -2,14 +2,22 @@
 body{
 	margin: 0;
 	overflow-x: hidden;
-	background: url('../2.jpg');
-	background-attachment: fixed;
+	background: url('../images/PirateBackground.jpg');
+	background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 	color: #fff;
 }
+
+.body-inner{
+	 height: 100%;
+	background: #e7d7d7bf;
+}
+
 section{
 	width: 100%;
 	margin-bottom: 20px;
-	padding: 30px;
 	overflow: none;
 	clear: both;
 
@@ -19,28 +27,35 @@ section{
 }
 
 .header{
-	height: 80px;
-    background: #96842bc7;
+	height: 50px;
+    background: #7d4e2ceb;
     font-weight: 700;
 }
+
 .header ul.navbar{
 	list-style: none;
 	margin: 0;
-	width: 50%;
+	width: 100%;
 }
 
 .header ul.navbar li a{
 	text-decoration: none;
 	float: left;
-	padding: 30px 20px;
+	padding: 15px 20px;
     color: #fff;
     display: inline-block;
 }
+.header ul.navbar li a.menu-item-left{
+	float: right;
+    margin-right: 32px;
+}
+
 
 .header ul.navbar-right{
 	width: 50%;
 	float: right;
 	list-style: none;
+	margin: 0;
 }
 
 .header ul.navbar-right li a{
@@ -50,6 +65,38 @@ text-decoration: none;
     color: #fff;
 }
 
+.headerContainer {
+    background: #482304e8; 
+    /* background-image: url("../images/PirateBackground.jpg"); */
+    /* font-family: sans-serif; */
+    font-family: Zapf Chancery, cursive;
+    line-height: 1.5;
+    border-bottom: 0.5px solid #cfcfcf52;
+    display: flow-root;
+}
+
+.flag {
+ 
+  margin-right: 12px;
+  margin-top: 15px;
+  float: right;
+  transition: transform 0.2s;
+}
+
+.flag:hover {
+ 
+  top: 50%;
+  transform: scale(1.2);
+}
+
+.flagContainer {
+  display: block;
+  height: 42px;
+  float: right;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-left: 3px solid #b65f5f2b;
+}
 
 
 .body .left{
@@ -64,7 +111,7 @@ text-decoration: none;
 
 .bar-menu{
 	height: 500px;
-	width: 90%;
+	width: 100%;
 	overflow-y: auto;
 	background: #be5d17ad;
 }
@@ -73,12 +120,12 @@ text-decoration: none;
 	cursor: all-scroll;
 }
 .body .table{
-	margin-bottom:20px;
+	border-bottom:1px solid #fff;
 }
 
 .tab-panel .panel-header{
 	background: #96842bc7;
-	padding: 10px;
+	height: 40px;
 	text-align: center;
 }
 
@@ -120,12 +167,13 @@ text-decoration: none;
 	margin: 0;
 	width: 100%;
 	font-weight: 700;
+	border-left: 1px solid #fff;
 }
 
 .body .right .menu li a{
 	text-decoration: none;
 	float: left;
-	padding: 12px 30px;
+	padding: 11px 30px;
 	color: #000;
 }
 
@@ -174,5 +222,44 @@ height: 40px;
 
 .table-toggle i.fa{
 	color: #fff;
+}
+
+/* History page starts*/
+
+#orders {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#orders td, #orders th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#orders tr:nth-child(even){background-color: #be5d17db;}
+
+table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1
+{background-color: #bc8b8b;}
+table.dataTable.display tbody tr.even>.sorting_1, table.dataTable.order-column.stripe tbody tr.even>.sorting_1
+{background-color: #be5d17db;}
+
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd
+{
+    background-color: #bc8b8b;
+}
+
+#orders th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #ae5616;
+  color: white;
+}
+
+.table-center
+{
+	width: 80%;
+	margin: 0 auto;
 }
 

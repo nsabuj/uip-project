@@ -5,7 +5,7 @@
   $("#submit-form").click(function(e){
    e.preventDefault();
    var uname=$("#uname").val();
-   var password=$("#password").val();
+   var password=md5($("#password").val());
    var users=DATABASE.users;
 
     if(uname==''){
@@ -16,7 +16,7 @@
     if(users.some(person => person.username === uname && person.password===password)){
         localStorage.setItem('loggedin', true);
         localStorage.setItem('username', uname);
-        window.location.href = "index.html";
+        window.location.href = "bartender-home.html";
     } else{
         alert("User not found");
     }
@@ -24,10 +24,10 @@
 
   });
 
-        $("#logout").click(function(e){
+        $(".logout").click(function(e){
          e.preventDefault();     
          localStorage.setItem('loggedin', false);
-         window.location.href = "login.html";
+         window.location.href = "bartender-login.html";
         }); 
 
 
@@ -49,7 +49,7 @@ if(!actions || actions.length<1){
 
   var item= search(last_action[1], beverages);
 
-  $('#'+last_action[0]).find('.panel-body').append('<li class="draggable-item" id="'+item.nr+'">'+item.name+'('+item.priceinclvat+' SEK)</li>');
+  $('#'+last_action[0]).find('.panel-body').append('<li><span class="draggable-item" id="'+item.nr+'">'+item.name+'('+item.priceinclvat+' SEK)</span></li>');
 
   var ids=getAllItems($('#'+last_action[0]).find('.panel-body'));
   localStorage.setItem(last_action[0], ids);

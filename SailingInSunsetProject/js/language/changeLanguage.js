@@ -145,4 +145,66 @@ function updateContent(page) {
     updateUndoRedoText("undoButton");
     updateUndoRedoText("redoButton");
   }
+
+
+
 }
+
+
+/* bartender page */
+   $(function(){
+$('.switch-lang').click(function(e){
+
+var lang=$(this).attr('id');
+localStorage.setItem("language", lang);
+translateContent(location.pathname.split("/").slice(-1));
+});
+   });
+
+
+
+
+function initInternationalizationCustom() {
+  // initially set the language
+  $(window).on("load", function() {
+    var currentLanguage = localStorage.getItem("language");
+    if (currentLanguage == null) {
+      localStorage.setItem("language", "en");
+    } 
+
+    // update all texts
+
+    translateContent(location.pathname.split("/").slice(-1));
+  });
+}
+
+
+function translateContent(page){
+
+$('.change-lang').each(function(i, obj) {
+  
+    updateTextBylang($(this).attr("id"),page);
+})
+
+}
+
+function updateTextBylang(id,page) {
+  // retrieve element to be changed by ID
+  var currentLanguage = localStorage.getItem("language");
+  
+  el = document.getElementById(id);
+  page= camelCase(page[0].substring(0, page[0].indexOf('.')));
+  console.log(page)
+   if(currentLanguage!==null){
+     
+       $('#'+id).html(DB_LANGUAGES[currentLanguage][page][id]);
+
+   }
+
+}
+
+        function camelCase(str) { 
+                   var text = str.replace(/-([a-z])/g,  
+                    function (g) { return g[1].toUpperCase(); }); 
+                   return text;
+        }
