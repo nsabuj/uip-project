@@ -48,10 +48,10 @@ function initCustomerMenu() {
     $(".availabilityText").each(function() {
       // console.log(this);
       if ($(this).html() <= 0) {
-        $(this).css("color", "#b23939");
+        $(this).css("color", "#f72846");
         $(this)
           .siblings(".availability")
-          .css("color", "#b23939");
+          .css("color", "#f72846");
         $(this)
           .parent()
           .attr("draggable", false);
