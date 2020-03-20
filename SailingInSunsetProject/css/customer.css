@@ -14,22 +14,6 @@
     display: flow-root;
 }
 
-/* Styling the main body */
-body {
-  margin: auto;
-  /* background: rgba(161, 11, 11, 0.84); */
-  /* background: rgba(255,160,122, 0.85); */
-  background-image: url("../images/PirateBackground.jpg");
-  /* background-size: cover; */
-
-
-
-/* font-family: "Open Sans", sans-serif; */
-/* background-image: url("../images/649969.jpg") !important; */
-/* background-size: cover; */
-  /* background-image: url("../images/USnbIi.jpg") center center no-repeat; */
-}
-
 /* For Menu Tabs */
 nav ul {
   display: flex;
@@ -54,12 +38,12 @@ nav li {
 
 /* Large headings*/
 h1 {
-  color: #58699e;
+  color: white;
   text-align: center;
 }
 /* Subheadings */
 h2 {
-  color: #fefff9;
+  color:#2c2c2c;
   text-align: center;
 }
 /* Settings for every image type */
@@ -75,7 +59,7 @@ h2 {
   }
   /* Flex grid for main content */
   .flex-grid {
-    color:#282121b5;
+    color:white;
     display: flex;
     /* margin: auto -1rem 1rem; */
     margin: 1em;
@@ -83,7 +67,7 @@ h2 {
   /* Menu container */
   .col {
     max-height: 500px;
-    background-color: #CD853F;
+    background-color: #5f2203;
     border-radius: 7px;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
@@ -112,7 +96,7 @@ h2 {
   /* Cart section */
   .main {
     flex: 1;
-    min-height: 600px; 
+    min-height: 600px;
     position:relative;
   }
   /* Undo and redo buttons */
@@ -127,12 +111,12 @@ h2 {
     font-size: 0.8em;
     text-align: center;
   }
-  
+
   .doButtons:hover {
     background: rgba(105, 114, 109, 0.56);
     border: 1px solid #00000052;
     cursor: pointer;
-    
+
   }
   .doButtons:disabled{
     background-color:rgba(54, 75, 63, 0.05);
@@ -270,13 +254,13 @@ p {
   position: absolute;
 }
 .vipbutton {
-  background: #D3D3D3;
+  background: #5f2203;
     /* width: 15%; */
     padding-top: 5px;
     padding-bottom: 5px;
-    color: #CD853F;
+    color: #bd9980;
     border-radius: 4px;
-    border: #D3D3D3 1.5px solid;
+    border: #5f2203 1.5px solid;
     margin-top: 15px;
     margin-bottom: 20px;
     margin-right: 10px;
@@ -284,12 +268,11 @@ p {
     float: right;
 }
 .vipbutton:disabled {
-  background: #d5d5d500;
   /* width: 15%; */
   padding-top: 5px;
   height: 100%;
   padding-bottom: 5px;
-  color: #aeaeae;
+  color:#bd9980;
   /* border-radius: 4px; */
   border: #aeaeae00 0px solid;
   /* margin-top: 15px; */
@@ -298,7 +281,7 @@ p {
   font-size: 0.9em;
   float: right;
 }
-.vipbutton:hover {
+/*.vipbutton:hover {
   border-color: #eedada;
   color: #f9feff;
   cursor: pointer;
@@ -309,13 +292,13 @@ p {
 }
 
 .signoutbutton {
-  background: #b44a4a73;
+  background: #5f2203;
   /* width: 15%; */
   padding-top: 5px;
   padding-bottom: 5px;
-  color: #d5a3a3;
+  color: #bd9980;
   border-radius: 4px;
-  border: #974747 1.5px solid;
+  border: #5f2203 1.5px solid;
   margin-top: 15px;
   margin-bottom: 20px;
   margin-right: 10px;
@@ -367,10 +350,10 @@ p {
 }
 
 .checkoutbutton {
-  background: #454f49b8;
+  background: #9c7357;
   padding-top: 5px;
   padding-bottom: 5px;
-  color: white;
+  color: black;
   border-radius: 4px;
   border: #67706b 1px solid;
   margin: auto;
@@ -378,9 +361,10 @@ p {
   font-size: 0.8em;
 }
 .checkoutbutton:hover {
-  background: rgba(105, 114, 109, 0.56);
+  background:#282222;
   border: 1px solid #00000052;
   cursor: pointer;
+  color: white;
 }
 
 .orderHeading {
@@ -390,7 +374,6 @@ p {
 #display {
   border: 2px solid #a9a9a957;
     padding: 0px 10px;
-    background: aliceblue;
 }
 
 #cart:hover {
@@ -408,11 +391,11 @@ p {
 .menuTab {
   text-decoration: none;
   text-align: center;
-  color: rgba(41, 47, 69, 0.7);
+  color: black;
   font-weight: bold;
   display: block;
   padding: 10px;
-  background-color: rgba(124, 128, 131, 0.45098039215686275);
+  background-color:#9c7357;
 }
 
 .menuTab:hover {
@@ -427,16 +410,21 @@ p {
   border: 1px solid grey;
   cursor: pointer;
 }
+
+.element.style {
+  color: Blue;
+}
+
 /* Settings for availability of beverage text on menu */
 .availability{
   float: right;
-  color: green;
+  color: #4ef22e;
   margin-right: 5px;
 }
 
 .availabilityText {
   float: right;
-  color: green;
+  color: #4ef22e;
   margin-right: 30px;
 }
 
@@ -628,7 +616,7 @@ form {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #b4b3b3; 
+  background: #b4b3b3;
 }
 
 /* Handle */
@@ -658,7 +646,7 @@ form {
 }
 
 /* Media queries for smaller tablet screen */
-@media only screen 
+@media only screen
   and (max-width: 1024px) {
 
 .container {
@@ -670,8 +658,8 @@ form {
     margin-left: 2%;
     margin-right: 2%;
     font-size: 1.2vw;
-    
-      
+
+
 }
 .cart {
   height: 78%;
@@ -682,23 +670,23 @@ form {
 
 
 /* Media queries for smaller tablet screen */
-@media only screen 
+@media only screen
   and (max-width: 1300px) {
     .cart {
       height: 74%;
       overflow: auto;
       /* font-size: 0.9vw; */
   }
-    
+
   }
-  
+
   /* Media queries for smaller tablet screen */
-@media only screen 
+@media only screen
 and (max-width: 768px) {
   .cart {
     height: 82%;
     overflow: auto;
     /* font-size: 0.9vw; */
   }
-  
+
 }

@@ -44,7 +44,7 @@ section {
 
 .header {
     height: 50px;
-    background: #7d4e2ceb;
+    background: #9c7357;
     font-weight: 700;
 }
 
@@ -88,7 +88,6 @@ section {
 /* styling interlization part */
 
 .headerContainer {
-    background: #482304e8;
     font-family: Zapf Chancery, cursive;
     line-height: 1.5;
     border-bottom: 0.5px solid #cfcfcf52;
@@ -134,9 +133,9 @@ section {
 
 .bar-menu {
     height: 500px;
-    width: 98%;
+    width: 100%;
     overflow-y: auto;
-    background: #be5d17ad;
+    background: #5f2203;
 }
 
 .bar-menu .draggable-item {
@@ -144,7 +143,7 @@ section {
 }
 
 .body .right .menu {
-    background: #96842bc7;
+    background: #9c7357;
     list-style: none;
     height: 40px;
     margin: 0;
@@ -174,7 +173,7 @@ section {
 }
 
 .bar-menu .in-stock {
-    color: #76d374;
+    color: #4ef22e;
 }
 
 .panel-body .qty-block {
@@ -196,7 +195,7 @@ section {
 /* styling each table header */
 
 .tab-panel .panel-header {
-    background: #96842bc7;
+    background: #9c7357;
     height: 40px;
     text-align: center;
 }
@@ -205,7 +204,7 @@ section {
 /* styling each table footer */
 
 .tab-panel .panel-footer {
-    background: #96842bc7;
+    background: #ac2d2dd1;
     padding: 10px 5px;
     text-align: center;
 }
@@ -214,7 +213,7 @@ section {
 /* styling each table body */
 
 .tab-panel .panel-body-wrapper {
-    background: #be5d17ad;
+    background: #5f2203;
     height: auto;
     padding: 20px;
 }
@@ -285,7 +284,6 @@ select {
 
 .body-inner {
     height: 100%;
-    background: #e7d7d7bf;
 }
 
 
@@ -307,29 +305,29 @@ select {
 }
 
 #orders tr:nth-child(even) {
-    background-color: #be5d17db;
+    background-color: #5f2203;
 }
 
 table.dataTable.display tbody tr.odd>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
-    background-color: #bc8b8b;
+    background-color: #5f2203;
 }
 
 table.dataTable.display tbody tr.even>.sorting_1,
 table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
-    background-color: #be5d17db;
+    background-color: #ac2d2dd1;
 }
 
 table.dataTable.stripe tbody tr.odd,
 table.dataTable.display tbody tr.odd {
-    background-color: #bc8b8b;
+    background-color: #ac2d2dd1;
 }
 
 #orders th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #ae5616;
+    background-color: #9c7357;
     color: white;
 }
 
@@ -339,4 +337,13 @@ table.dataTable.display tbody tr.odd {
 .table-center {
     width: 80%;
     margin: 0 auto;
+}
+
+
+/* media queries starts */
+
+@media only screen and (max-width: 812px) {
+    html {
+        overflow: hidden !important;
+    }
 }
