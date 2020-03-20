@@ -1,0 +1,109 @@
+<html>                                                                                                                <!--start of html -->
+	<head>                                                                                                           <!--start of head -->
+		<title>History page</title>
+              <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- fontawesome icons -->
+              <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
+              
+		<link rel="stylesheet" href="../css/style.css">
+	</head>                                                                                                           <!--end of head -->
+	<body>                                                                                                            <!--Start of body part -->
+    <div class="body-inner">
+    	
+ 
+  <div class="headerContainer">                                                                                       <!--Interlization options starts here -->
+      
+      <div class="flagContainer">
+        
+          <a id="en" class="switch-lang"href="#"><img class="manImg" src="../images/uk.png"/></a>
+  
+    
+          <a href="#" id="de" class=" switch-lang"><img class="manImg" src="../images/sweden.png"/></a>
+    
+      </div>
+    </div>                                                                                                             <!--Interlization ends here -->
+    
+		<section class="header">                                                                                      <!-- section head starts -->
+			<ul class="navbar">
+				<li><a href="bartender-home.html" class="active change-lang" id="ln-home-menu">Home</a></li>
+				<li><a href="history-page.html" class="change-lang" id="ln-history-menu" >History</a></li>
+				<li><a href="" class="logout change-lang menu-item-left" id="ln-logout-menu">Logout</a></li>
+				
+			</ul>
+
+
+
+		</section>                                                                                                       <!--end of section head -->
+
+		<section class="body">
+              <div class="table-center">
+       <table id="orders" class="display">                                                                         <!--Previous orders table starts here -->
+
+            <thead>                                                                                               <!--Table head starts here -->
+            <tr>
+
+		    <th class="change-lang" id="ln-transaction-header-text" >Transaction Id</th>
+		    <th class="change-lang" id="ln-userid-header-text">User Id</th>
+		    <th class="change-lang" id="ln-beverageid-header-text">Beverage Id</th>
+		    <th class="change-lang" id="ln-date-header-text">Date</th>
+            </tr>
+           </thead>                                                                                             <!--Table head ends here -->
+           <tfoot>                                                                                             <!--table footer starts here -->
+            <tr>
+		    <th class="change-lang" id="ln-transaction-footer-text">Transaction Id</th>
+		    <th class="change-lang" id="ln-userid-footer-text">User Id</th>
+		    <th class="change-lang" id="ln-beverageid-footer-text">Beverage Id</th>
+		    <th class="change-lang" id="ln-date-footer-text">Date</th>
+            </tr>
+           </tfoot>                                                                                              <!--Table footer end here -->
+  
+        </table>                                                                                                   <!--Previous orders table ends here -->
+
+
+            
+
+              </div>
+
+		</section>
+
+   </div>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>                                   <!--scripts are start here -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="../database/database.js"></script>
+<script src="../database/newLoader.js"></script>
+<script type="text/javascript" src="../js/language/languages.js"></script>
+<script type="text/javascript" src="../js/language/changeLanguage.js"></script>
+<script src="../js/custom.js"></script> 
+<script>
+
+
+
+      // Translate page according to default language and setup so that language changes on selection
+      initInternationalizationCustom();
+       $(function(){
+           var loggedin = localStorage.getItem('loggedin');
+       if(!loggedin || loggedin==='false'){
+           window.location.href = "bartender-login.html";
+           
+        }
+
+
+$('#orders').DataTable( {
+    data: DATABASE.sold,
+            "columns": [
+            { "data": "transaction_id" },
+            { "data": "user_id" },
+            { "data": "beer_id" },
+            { "data": "timestamp" }
+        ]
+
+
+} );
+
+
+
+ });                                                                        /* Previous orders table starts here */
+
+</script>             
+	</body>                                                                  <!--Body ends here -->
+</html>                                                                      <!--Html ends here -->

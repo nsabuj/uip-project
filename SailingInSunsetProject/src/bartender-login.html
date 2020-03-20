@@ -1,0 +1,46 @@
+<html>                                                                <!--start of html -->
+<head>
+	<title>Login</title>
+	<link rel="stylesheet" href="../css/login.css">
+</head>                                                            <!--end of head -->
+
+<body>                                                              <!--start of body -->
+	<form   id="login-form">                                           <!--Login form starts -->
+  <div class="imgcontainer">                                        <!--avatar starts -->
+    <img src="../images/user-avatar.png" alt="Avatar" class="avatar">
+  </div>                                                            <!--avatar ends -->
+
+  <div class="container">                                         
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" id="password" required>
+
+    <button type="submit" id="submit-form">Login</button>
+
+  </div>                                                          
+
+
+</form>                                                                 <!--Login form ends -->
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script> <!--start of scripts -->
+<script src="../database/database.js"></script>
+<script src="../database/newLoader.js"></script>
+<script src="../js/md5.min.js"></script>
+<script src="../js/custom.js"></script>
+<script>
+    $(function(){
+     var loggedin = localStorage.getItem('loggedin');
+     if(loggedin && loggedin==='true'){                            ///Check if user is loggedin
+           window.location.href = "bartender-home.html";
+           
+        }
+
+
+        
+      });
+</script>                                                           <!--end of scripts -->
+
+</body>                                                              <!--body ends -->                                         
+
+</html>

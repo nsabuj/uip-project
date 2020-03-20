@@ -1,0 +1,346 @@
+/* Bartender home page starts*/
+
+html {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* background image and body styling */
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background: url('../images/PirateBackground.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+}
+
+
+/* in general style for sections */
+
+section {
+    width: 100%;
+    margin-bottom: 20px;
+    overflow: none;
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+
+/* styling the header section */
+
+.header {
+    height: 50px;
+    background: #7d4e2ceb;
+    font-weight: 700;
+}
+
+
+/* styling the header nav menu */
+
+.header ul.navbar {
+    list-style: none;
+    margin: 0;
+    width: 100%;
+}
+
+.header ul.navbar li a {
+    text-decoration: none;
+    float: left;
+    padding: 15px 20px;
+    color: #fff;
+    display: inline-block;
+}
+
+.header ul.navbar li a.menu-item-left {
+    float: right;
+    margin-right: 32px;
+}
+
+.header ul.navbar-right {
+    width: 50%;
+    float: right;
+    list-style: none;
+    margin: 0;
+}
+
+.header ul.navbar-right li a {
+    text-decoration: none;
+    float: right;
+    padding: 15px 40px;
+    color: #fff;
+}
+
+
+/* styling interlization part */
+
+.headerContainer {
+    background: #482304e8;
+    font-family: Zapf Chancery, cursive;
+    line-height: 1.5;
+    border-bottom: 0.5px solid #cfcfcf52;
+    display: flow-root;
+}
+
+.flag {
+    margin-right: 12px;
+    margin-top: 15px;
+    float: right;
+    transition: transform 0.2s;
+}
+
+.flag:hover {
+    top: 50%;
+    transform: scale(1.2);
+}
+
+.flagContainer {
+    display: block;
+    height: 42px;
+    float: right;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-left: 3px solid #b65f5f2b;
+}
+
+
+/*styling Main content part starts here */
+
+.body .left {
+    float: left;
+    width: 50%;
+}
+
+.body .right {
+    float: right;
+    width: 50%;
+}
+
+
+/*css for the tabs of the right side starts here  */
+
+.bar-menu {
+    height: 500px;
+    width: 100%;
+    overflow-y: auto;
+    background: #be5d17ad;
+}
+
+.bar-menu .draggable-item {
+    cursor: all-scroll;
+}
+
+.body .right .menu {
+    background: #96842bc7;
+    list-style: none;
+    height: 40px;
+    margin: 0;
+    width: 100%;
+    font-weight: 700;
+    border-left: 1px solid #fff;
+}
+
+.body .right .menu li a {
+    text-decoration: none;
+    float: left;
+    padding: 11px 30px;
+    color: #000;
+}
+
+.bar-menu .draggable-item {
+    list-style: none;
+    padding: 5px 10px;
+    border: 1px dotted #000;
+}
+
+
+/* styling list of items in the tabs  */
+
+.bar-menu .qty-block {
+    float: right;
+}
+
+.bar-menu .in-stock {
+    color: #76d374;
+}
+
+.panel-body .qty-block {
+    display: none;
+}
+
+.out-of-stock {
+    color: #c51f1f;
+}
+
+
+/* styling of left side tables */
+
+.body .table {
+    border-bottom: 1px solid #fff;
+}
+
+
+/* styling each table header */
+
+.tab-panel .panel-header {
+    background: #96842bc7;
+    height: 40px;
+    text-align: center;
+}
+
+
+/* styling each table footer */
+
+.tab-panel .panel-footer {
+    background: #96842bc7;
+    padding: 10px 5px;
+    text-align: center;
+}
+
+
+/* styling each table body */
+
+.tab-panel .panel-body-wrapper {
+    background: #be5d17ad;
+    height: auto;
+    padding: 20px;
+}
+
+.tab-panel .panel-body {
+    border: 3px dotted #fff;
+    min-height: 50px;
+    margin: 10px;
+    list-style: decimal;
+    color: #fff;
+    padding: 5px;
+    max-height: 120px;
+    overflow-x: auto;
+    overflow-y: scroll;
+}
+
+.tab-panel .panel-body .draggable-item {
+    width: 300px;
+    list-style: none;
+}
+
+.table-toggle i.fa {
+    color: #fff;
+}
+
+
+/* footer section starts here */
+
+.footer .button-group {
+    float: right;
+    margin-top: 30px;
+    width: 470px;
+}
+
+.footer .button-group .left {
+    float: left;
+}
+
+.footer .button-group .right {
+    float: right;
+}
+
+
+/* redo and undo buttons styling */
+
+.footer .button-group .right .btn-redo {
+    float: left;
+}
+
+.footer .button-group .right .btn-undo {
+    float: left;
+}
+
+button.btn,
+select {
+    height: 40px;
+    padding: 5px;
+    background: #ac2d2dd1;
+    font-weight: bold;
+    color: #fff;
+}
+
+
+/* History page starts*/
+
+
+/* layer on the background image in history page*/
+
+.body-inner {
+    height: 100%;
+    background: #e7d7d7bf;
+}
+
+
+/* history table fonts styling */
+
+#orders {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+
+/* history table table head and table body styling */
+
+#orders td,
+#orders th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#orders tr:nth-child(even) {
+    background-color: #be5d17db;
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #bc8b8b;
+}
+
+table.dataTable.display tbody tr.even>.sorting_1,
+table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: #be5d17db;
+}
+
+table.dataTable.stripe tbody tr.odd,
+table.dataTable.display tbody tr.odd {
+    background-color: #bc8b8b;
+}
+
+#orders th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #ae5616;
+    color: white;
+}
+
+
+/* centering the table */
+
+.table-center {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+/* media queries starts */
+
+@media only screen and (max-width: 812px) {
+    section.body .left,
+    section.body .right {
+        width: 100% !important;
+    }
+}
