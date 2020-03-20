@@ -3,5 +3,5 @@ function gotoCustomerPage() {
 }
 
 function gotoBartenderPage() {
-  window.location.href = "../bartender/bartender-page.html";
+  window.location.href = "bartender-home.html";
 }

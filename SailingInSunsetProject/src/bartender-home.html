@@ -1,65 +1,64 @@
-<html>
-	<head>
-		<title></title>
+<html>                                                                      <!--start of html -->
+	<head>                                                                    <!--start of head -->
+		<title>Bartander Home</title>
               <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- fontawesome icons -->
               
 		<link rel="stylesheet" href="../css/style.css">
-	</head>
-	<body>
-
-              <div class="headerContainer">
-      <!-- <img src="../images/theflyingdutchman-logo.png" alt="logo" class="logo" /> -->
-      <div class="flagContainer">
+	</head>                                                                 <!--end of head -->
+	<body>                                                                   <!--start of body part -->
+                                                                         <!-- start of internationalization -->
+      <div class="headerContainer">
+      
+        <div class="flagContainer">
         
-          <a id="en" class="switch-lang"href="#"><img class="manImg" src="../images/uk.png"/></a>
+            <a id="en" class="switch-lang"href="#"><img class="manImg" src="../images/uk.png"/></a>
   
     
-          <a href="#" id="de" class=" switch-lang"><img class="manImg" src="../images/sweden.png"/></a>
+            <a href="#" id="de" class=" switch-lang"><img class="manImg" src="../images/sweden.png"/></a>
     
-      </div>
+        </div>
     </div>
-    <!-- End Header -->
+                                                                     <!-- End of internationalization -->
 
-		<section class="header"> <!-- section head starts -->
+		<section class="header">                                         <!-- section head starts -->
 
 
 
 			<ul class="navbar">
 				<li><a href="bartender-home.html" class="active change-lang" id="ln-home-menu">Home</a></li>
 				<li><a href="history-page.html" class="change-lang" id="ln-history-menu" >History</a></li>
-			<!--	<li><a href="bartender-page.html" class="change-lang" id="ln-inventory-menu">Inventory</a></li>  -->
 				<li><a href="" class="logout change-lang menu-item-left" id="ln-logout-menu">Logout</a></li>
 			</ul>
 
 
 
-		</section>   <!--end of section head -->
+		</section>                                                                   <!--end of section head -->
 
-		<section class="body">
-              <div class="left">
-              	  <div class="table" id="table1">
+		<section class="body">                                                        <!--start of main body section -->
+               <div class="left">
+              	  <div class="table" id="table1">                                 <!--Table 1 starts -->
               	  	<div class="tab-panel">
               	  		<div class="panel-header">
-              	  			 <span class="change-lang" id="ln-table1-text">Table 1 </span> 
+              	  			 <span class="change-lang" id="ln-table1-text">Table 1 </span>   
                                             <a href=""class="table-toggle float-right" >
-                                                 <span class="collapse-in"><i class="fa fa-angle-down fa-2x"></i></span>
-                                                 <span class="collapse hide"><i class="fa fa-angle-up fa-2x"></i></span>
+                                                 <span class="collapse-in hide"><i class="fa fa-angle-down fa-2x"></i></span>
+                                                 <span class="collapse"><i class="fa fa-angle-up fa-2x"></i></span>
                                             </a>
               	  		</div>
-                                 <div class="panel-body-wrapper hide">
+                                 <div class="panel-body-wrapper">
                                    <div class="panel-body"  data-placeholder="Drop here">
                                     
                                    </div>
                                    </div>
 
-              	  		<div class="panel-footer-wrapper hide">
+              	  		<div class="panel-footer-wrapper ">
               	  	    <div class="panel-footer">
               	  			<p> <span class="change-lang" id="ln-total-amount-text1">Total amount </span> <span class="amount">0</span>SEK</p>
               	  		</div>
               	  		</div>
               	  	</div>
-              	  </div>
-              	  <div class="table" id="table2">
+              	  </div>                                                            <!--Table 1 ends -->
+              	  <div class="table" id="table2">                                   <!--Table 2 starts -->
               	  	<div class="tab-panel">
               	  		<div class="panel-header">
               	  			<span class="change-lang" id="ln-table2-text"> Table 2  </span>
@@ -79,8 +78,8 @@
               	  		</div>
               	  		</div>
               	  	</div>
-              	  </div>
-              	  <div class="table" id="table3">
+              	  </div>                                                                <!--Table 2 ends -->
+              	  <div class="table" id="table3">                                       <!--Table3 starts -->
               	  	<div class="tab-panel">
               	  		<div class="panel-header">
               	  			  <span class="change-lang" id="ln-table3-text"> Table 3  </span>
@@ -100,56 +99,56 @@
               	  		</div>
               	  		</div>
               	  	</div>
-              	  </div>
-              </div>
-              <div class="right">
-              	 <ul class="menu">
-				<li><a href="" class="menu-item change-lang" id="all"  >All</a></li>
-				<li><a href="" class="menu-item change-lang" id="beers"  >Beer</a></li>
-				<li><a href="" class="menu-item change-lang" id="spirits" >Spirits</a></li>
-				<li><a href="" class="menu-item change-lang" id="wines" >Wine</a></li>
-				
-			</ul>
-			  <div class="bar-menu">
-			  	
-			  </div>
-                       <div class="footer">
+              	   </div>                                                                <!--Table 3 ends -->
+                  </div>
+               <div class="right">
+                        <ul class="menu">                                                <!--Bar Tab Menu starts -->
+                        <li><a href="" class="menu-item change-lang" id="all"  >All</a></li>
+                        <li><a href="" class="menu-item change-lang" id="beers"  >Beer</a></li>
+                        <li><a href="" class="menu-item change-lang" id="spirits" >Spirits</a></li>
+                        <li><a href="" class="menu-item change-lang" id="wines" >Wine</a></li>
+                        
+                      </ul>                                                              <!--Bar Tab Menu ends -->
+                        <div class="bar-menu">                                           <!--Beverages listing menu starts -->
+                                                                                         <!--Content inserted by jquery -->
+                        </div>                                                           <!--Beverages listing menu ends -->
+                        <div class="footer">                                             <!--Footer starts -->
 
-                                          <div class="button-group">
-                                                 <div class="left">
-                                                 <div class="btn-checkout">
-                                                          <select name="" >
-                                                                 <option value="">Select an option</option>
-                                                                 <option value="table1">Table1</option>
-                                                                 <option value="table2">Table2</option>
-                                                                 <option value="table3">Table3</option>
-                                                                 <option value="all">All</option>
-                                                          </select>
-                                                        <button class="btn checkout"><i class="fa fa-credit-card"></i> 
-                                                          <span class="change-lang" id="ln-checkout-text">Checkout</span></button>
-                                                 </div>                             
-                                                 </div>
-                                                 <div class="right">
-                                                        <div class="btn-undo">
-                                                               <button class="btn undo"><i class="fa fa-times"></i> <span class="change-lang" id="ln-undo-text">Undo </span></button>
-                                                        </div>
-                                                     <div class="btn-redo">
-                                                               <button class="btn redo"><i class="fa fa-window-restore"></i>
-                                                               <span class="change-lang" id="ln-redo-text">Redo</span></button>
-                                                        </div>
+                                                <div class="button-group">
+                                                      <div class="left">
+                                                      <div class="">
+                                                                <select name="" id="selected-table">
+                                                                      <option value="">Select an option</option>
+                                                                      <option value="table1">Table1</option>
+                                                                      <option value="table2">Table2</option>
+                                                                      <option value="table3">Table3</option>
+                                                                      <option value="all">All</option>
+                                                                </select>
+                                                              <button class="btn btn-checkout"><i class="fa fa-credit-card"></i> 
+                                                                <span class="change-lang" id="ln-checkout-text">Checkout</span></button>
+                                                      </div>                             
+                                                      </div>
+                                                      <div class="right">
+                                                              <div class="btn-undo">
+                                                                    <button class="btn undo"><i class="fa fa-times"></i> <span class="change-lang" id="ln-undo-text">Undo </span></button>
+                                                              </div>
+                                                          <div class="btn-redo">
+                                                                    <button class="btn redo"><i class="fa fa-window-restore"></i>
+                                                                    <span class="change-lang" id="ln-redo-text">Redo</span></button>
+                                                              </div>
 
-                                                 </div>
+                                                      </div>
 
-                                          </div>
+                                                </div>
 
-                             </div>             
+                        </div>                                                          <!--Footer ends -->   
 
-              </div>
+                    </div>
 
-		</section>
+		</section>                                                                        <!--end of main body section -->
 
-
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+                                                                                      
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>    <!--start of scripts -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="../database/database.js"></script>
 <script src="../database/newLoader.js"></script>
@@ -160,21 +159,21 @@
 
 
 
-      // Translate page according to default language and setup so that language changes on selection
-      initInternationalizationCustom();
+      
+      initInternationalizationCustom();                                               /* initialization of multi langual feature */
 
        $(function(){
                 var loggedin = localStorage.getItem('loggedin');
-                 if(!loggedin || loggedin==='false'){
+                 if(!loggedin || loggedin==='false'){                                 /* Checking user authentication */
            window.location.href = "bartender-login.html";
            
         }
 
 
-        refreash();
+        refreash();                                                                 /* this function is Updating the content on page reload  */
        
 
-                   $('.menu-item').click(function(e){
+                   $('.menu-item').click(function(e){                               /* bar menu selector starts  */
                       e.preventDefault();
                       var id=$(this).attr('id');
                       
@@ -198,66 +197,70 @@
 
 
 
-                   });
+                   });                                                             /* bar menu selector ends  */
 
 
-                                      /// show the list by default
+                                      
          var defdata=[];
          defdata=defdata.concat(BEVERAGES.beers,BEVERAGES.wines,BEVERAGES.spirits);
          
         var list='';
-        changelist(defdata);
-
-// drag and drop ends
+        changelist(defdata);                                                      /* Initialization of bar menu with default(all) data  */
 
 
 
+              function changelist(data){                                          /* start of  populating  beverage list based on the selected tab   */
+
+              var list='';
+ 
+              data.forEach(element => { 
+              let qty=itemsInStock(element.nr);
+              let status_text='';
+                if(qty>0){
+                  status_text='<span class="in-stock">In stock</span>';
+                }else{
+                  status_text='<span class="out-of-stock">Out of stock</span>';
+                }
+                list += '<li class="draggable-item" id="'+element.nr+'">'+element.name+'('+element.priceinclvat+' SEK)<span class="qty-block"><span class="'+element.nr+'-qty">'+qty+'</span> : '+status_text+'</span></li>';
+                      } 
+                      );
+                            
+
+                  $('.bar-menu').html(list);
+
+                  $('.draggable-item').draggable({
+                  revert: "invalid",
+                  stack: ".draggable-item",
+                  helper: 'clone'
+                });
+                $('.panel-body').droppable({
+                  accept: ".draggable-item",
+                  drop: function (event, ui) {
+                      var droppable = $(this);
+                      var draggable = ui.draggable;
+                      /* Move draggable into droppable  */
+                      if(itemsInStock(draggable.attr('id'))>0){                        /* checking if the beverage is available in the inventory   */
+
+                      draggable.clone().appendTo(droppable);
+
+                      draggable.css({top: '5px', left: '5px'});
+                      var ids=getAllItems(droppable);
+                      $(this).parents('.tab-panel').find('.amount').html(update_total(ids));
+                      var id=$(this).parents('.table').attr('id');
+                      localStorage.setItem(id, ids);
+                    
+                      updateRedoUndo(id,draggable.attr('id'));        
+                      Updatestock(draggable.attr('id'));
+                      }else{
+                        return;
+                      }
 
 
 
-        // end default data listing
+                  }
 
-
-
-function changelist(data){
-
-var list='';
-
- data.forEach(element => { 
-
- list += '<li class="draggable-item" id="'+element.nr+'">'+element.name+'('+element.priceinclvat+' SEK)</li>';
-        } 
-        );
-              
-
-    $('.bar-menu').html(list);
-
-     $('.draggable-item').draggable({
-    revert: "invalid",
-    stack: ".draggable-item",
-    helper: 'clone'
-   });
-   $('.panel-body').droppable({
-    accept: ".draggable-item",
-    drop: function (event, ui) {
-        var droppable = $(this);
-        var draggable = ui.draggable;
-        // Move draggable into droppable
-        draggable.clone().appendTo(droppable);
-
-        draggable.css({top: '5px', left: '5px'});
-        var ids=getAllItems(droppable);
-        $(this).parents('.tab-panel').find('.amount').html(update_total(ids));
-        var id=$(this).parents('.table').attr('id');
-        localStorage.setItem(id, ids);
-       
-        updateRedoUndo(id,draggable.attr('id'));        
-        
-
-    }
-
-  });
-  }
+                });
+                }                                                                      /* end of  populating  beverage list based on the selected tab   */
 
 
 
@@ -269,8 +272,8 @@ var list='';
 
  });
 
-function updateRedoUndo(tablename,id){
-        var actions=JSON.parse(localStorage.getItem('latestActions'));
+        function updateRedoUndo(tablename,id){                                     /* start of saving the information of latest actions */
+        var actions=localStorage.getItem('latestActions')?JSON.parse(localStorage.getItem('latestActions')):null;
        if(!actions){
          var actions=[];
        }
@@ -280,14 +283,12 @@ function updateRedoUndo(tablename,id){
        localStorage.setItem('latestActions',JSON.stringify(actions));
 
 
-}
+}                                                                                 /* end of the function for saving the information of latest actions */
 
 
+</script>   
 
 
-
-
-
-</script>             
-	</body>
-</html>
+                                                                                <!--end of scripts -->
+	</body>                                                                       <!--end of body -->
+</html>                                                                         <!--end of html -->

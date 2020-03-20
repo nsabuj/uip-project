@@ -1,17 +1,17 @@
-<html>
-	<head>
-		<title></title>
+<html>                                                                                                                <!--start of html -->
+	<head>                                                                                                           <!--start of head -->
+		<title>History page</title>
               <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">  <!-- fontawesome icons -->
               <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css"/>
               
 		<link rel="stylesheet" href="../css/style.css">
-	</head>
-	<body>
+	</head>                                                                                                           <!--end of head -->
+	<body>                                                                                                            <!--Start of body part -->
     <div class="body-inner">
     	
  
-  <div class="headerContainer">
-      <!-- <img src="../images/theflyingdutchman-logo.png" alt="logo" class="logo" /> -->
+  <div class="headerContainer">                                                                                       <!--Interlization options starts here -->
+      
       <div class="flagContainer">
         
           <a id="en" class="switch-lang"href="#"><img class="manImg" src="../images/uk.png"/></a>
@@ -20,9 +20,9 @@
           <a href="#" id="de" class=" switch-lang"><img class="manImg" src="../images/sweden.png"/></a>
     
       </div>
-    </div>
+    </div>                                                                                                             <!--Interlization ends here -->
     
-		<section class="header"> <!-- section head starts -->
+		<section class="header">                                                                                      <!-- section head starts -->
 			<ul class="navbar">
 				<li><a href="bartender-home.html" class="active change-lang" id="ln-home-menu">Home</a></li>
 				<li><a href="history-page.html" class="change-lang" id="ln-history-menu" >History</a></li>
@@ -32,33 +32,31 @@
 
 
 
-		</section>   <!--end of section head -->
+		</section>                                                                                                       <!--end of section head -->
 
 		<section class="body">
               <div class="table-center">
-       <table id="orders" class="display">
-   
+       <table id="orders" class="display">                                                                         <!--Previous orders table starts here -->
 
-
-            <thead>
+            <thead>                                                                                               <!--Table head starts here -->
             <tr>
-            	
+
 		    <th class="change-lang" id="ln-transaction-header-text" >Transaction Id</th>
 		    <th class="change-lang" id="ln-userid-header-text">User Id</th>
 		    <th class="change-lang" id="ln-beverageid-header-text">Beverage Id</th>
 		    <th class="change-lang" id="ln-date-header-text">Date</th>
             </tr>
-           </thead>
-           <tfoot>
+           </thead>                                                                                             <!--Table head ends here -->
+           <tfoot>                                                                                             <!--table footer starts here -->
             <tr>
 		    <th class="change-lang" id="ln-transaction-footer-text">Transaction Id</th>
 		    <th class="change-lang" id="ln-userid-footer-text">User Id</th>
 		    <th class="change-lang" id="ln-beverageid-footer-text">Beverage Id</th>
 		    <th class="change-lang" id="ln-date-footer-text">Date</th>
             </tr>
-           </tfoot>
+           </tfoot>                                                                                              <!--Table footer end here -->
   
-        </table>
+        </table>                                                                                                   <!--Previous orders table ends here -->
 
 
             
@@ -68,7 +66,7 @@
 		</section>
 
    </div>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>                                   <!--scripts are start here -->
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="../database/database.js"></script>
@@ -88,7 +86,7 @@
            window.location.href = "bartender-login.html";
            
         }
-console.log( DATABASE.sold);
+
 
 $('#orders').DataTable( {
     data: DATABASE.sold,
@@ -104,13 +102,8 @@ $('#orders').DataTable( {
 
 
 
- });
-
-
-
-
-
+ });                                                                        /* Previous orders table starts here */
 
 </script>             
-	</body>
-</html>
+	</body>                                                                  <!--Body ends here -->
+</html>                                                                      <!--Html ends here -->
