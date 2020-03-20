@@ -90,34 +90,12 @@ function updateContent(page) {
             arr[i].style.opacity = 0.5;
         }
     }
-    if (page == "bar.html") {
-        //
-        // Bartender View
-        //
-        // call the updateText function for each item
-        updateText("title");
-        updateText("welcomeMessage");
-        updateText("undoButton");
-        updateText("redoButton");
-        updateText("resetButton");
-        updateText("HistoryBtn");
-        updateText("InventoryBtn");
 
-        // change the menu tab texts
-        updateSection("menuTabs", ["allDrink", "beer", "wine", "spirit"]);
-
-        // change the cashier texts
-        updateSection("cashier", ["cashierText", "checkoutText"]);
-
-        // change the table texts
-        updateSection("table", ["t1Name", "t2Name", "t3Name"]);
-
-        // change order texts
-        updateOrderTexts("order", "orderText");
-    } else {
+    if (page == "customer.html") {
         //
         // Customer View
         //
+        // console.log("This is the customer page");
         updateText("username");
         updateText("password");
         updateText("signin");
@@ -145,7 +123,68 @@ function updateContent(page) {
         updateUndoRedoText("undoButton");
         updateUndoRedoText("redoButton");
     }
+    else{
+        // console.log("This is the index page");
+        updateText("customerButton");
+        updateText("barButton");
+
+    }
+}
+
+/* bartender page */
+$(function() {
+    $('.switch-lang').click(function(e) {
+
+        var lang = $(this).attr('id');
+        localStorage.setItem("language", lang);
+        translateContent(location.pathname.split("/").slice(-1));
+    });
+});
 
 
 
+
+function initInternationalizationCustom() { /* Initialization of multilingual feature  */
+
+    $(window).on("load", function() {
+        var currentLanguage = localStorage.getItem("language");
+        if (currentLanguage == null) {
+            localStorage.setItem("language", "en"); /* if language is not selected. set english as default language */
+        }
+
+
+
+        translateContent(location.pathname.split("/").slice(-1)); /* translate words. Definition of this function is below */
+    });
+}
+
+
+function translateContent(page) { /* take a parameter, pagename*/
+
+    $('.change-lang').each(function(i, obj) { /* change-lang is a common class in all translateable content, it helps to select the content */
+
+        updateTextBylang($(this).attr("id"), page); /* updateTextBylang is also part of the translation, used separetly for avoiding complexity */
+    })
+
+} /* end of the function */
+
+function updateTextBylang(id, page) { /* recievces two parameter. id of element and page name */
+
+    var currentLanguage = localStorage.getItem("language");
+
+    el = document.getElementById(id);
+    page = camelCase(page[0].substring(0, page[0].indexOf('.'))); /* tranforming the page name to camelcase*/
+
+    if (currentLanguage !== null) { /* if language any launage selected */
+
+        $('#' + id).html(DB_LANGUAGES[currentLanguage][page][id]); /* replace the text in each element with the text from language object */
+
+    }
+
+}
+
+function camelCase(str) {
+    var text = str.replace(/-([a-z])/g,
+        function(g) { return g[1].toUpperCase(); }); /* convert string to camelcase  */
+    return text;
 }

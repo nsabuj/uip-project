@@ -1,54 +1,110 @@
-/* Division for buttons*/
+.headerContainer {
+  font-family: Zapf Chancery, cursive;
+  line-height: 1.5;
+  border-bottom: 0.5px solid #cfcfcf52;
+  display: flow-root;
+}
+
+body {
+background: url('../images/PirateBackground.jpg');
+background-size: 100% 100%;
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-position: center;
+}
+
 .divbutton {
-    position: fixed;
-    width: 100%;
-    height: 50%;
-    border: none;
-    margin-left: 5%;
-    margin-top: 10%;
-    display: inherit;
+position: fixed;
+width: 100%;
+height: 50%;
+border: none;
+margin-left: 5%;
+margin-top: 10%;
+display: inherit;
+}
+
+.flag {
+opacity: 0.5;
+margin-right: 12px;
+margin-top: 15px;
+float: right;
+transition: transform 0.2s;
+}
+
+.flag:hover {
+opacity: 0.1;
+top: 50%;
+transform: scale(1.2);
+}
+
+.flagContainer {
+display: block;
+height: 63px;
+float: right;
+padding-left: 20px;
+padding-right: 10px;
+border-left: 3px solid #b65f5f2b;
+}
+.divbutton {
+  position: relative;
+  width: 600px;
+  height: 300px;
+  border: 0px;
+  margin-left: 10%;
+  margin-top: 10%;
+  display: inherit;
 }
 
 /* properties of button class used for CUSTOMER and BARTENDER buttons */
 .button {
-  background-color:#5f2203;
-  border: none;
-  float:left;
-  color: white;
-  padding: 0px 0px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 40px;
-  border-radius: 10px;
-  opacity: 0.7;
-  width: 30%;
-  height: 50%;
-  margin: 5px;
+background-color:#5f2203;
+border: none;
+float:left;
+color: white; /* White color for button caption */
+padding: 0px 0px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 40px;
+border-radius: 10px;
+opacity: 0.7;
+width: 30%;
+height: 50%;
+margin: 5px;
 }
 
 /* Increase opacity to from 0.7 to 1 for hovering on Button */
 .button:hover {
-  opacity: 1;
+opacity: 1;
 }
-/* Media queries for smaller tablet screen */
-@media only screen and (max-width: 1300px) {
-  .button {
-    font-size: 40px;
-    overflow: auto;
+
+body {
+  width: 100%;
+  height: 400px;
+  background-image: url("../images/PirateBackground4.jpg");
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  background-attachment: fixed;
+  background-position: center;
   }
-}
-/* Media queries for smaller tablet screen */
-@media only screen and (max-width: 1024px) {
-  .button {
-    font-size: 30px;
-    overflow: auto;
+
+  @media only screen and (max-width: 1300px) {
+    .button {
+      font-size: 40px;
+      overflow: auto;
+    }
   }
-}
-/* Media queries for smaller tablet screen */
-@media only screen and (max-width: 768px) {
-  .button {
-    font-size: 20px;
-    overflow: auto;
+  
+  @media only screen and (max-width: 1024px) {
+    .button {
+      font-size: 30px;
+      overflow: auto;
+    }
   }
-}
+  
+  @media only screen and (max-width: 768px) {
+    .button {
+      font-size: 20px;
+      overflow: auto;
+    }
+  }
