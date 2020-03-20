@@ -2,7 +2,8 @@
 
 html {
     width: 100%;
-    overflow: hidden;
+    height: auto;
+    overflow-x: hidden;
 }
 
 
@@ -10,8 +11,13 @@ html {
 
 body {
     margin: 0;
-    overflow-x: hidden;
     background: url('../images/PirateBackground.jpg');
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+body.history-page {
+    margin: 0;
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -128,7 +134,7 @@ section {
 
 .bar-menu {
     height: 500px;
-    width: 100%;
+    width: 98%;
     overflow-y: auto;
     background: #be5d17ad;
 }
@@ -333,14 +339,4 @@ table.dataTable.display tbody tr.odd {
 .table-center {
     width: 80%;
     margin: 0 auto;
-}
-
-
-/* media queries starts */
-
-@media only screen and (max-width: 812px) {
-    section.body .left,
-    section.body .right {
-        width: 100% !important;
-    }
 }
