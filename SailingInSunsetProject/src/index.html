@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
-
-    <!-- Generic design for all pages -->
-    <link rel="stylesheet" href="../css/design.css">
-    <!-- CSS File for index page-->
     <link rel="stylesheet" href="../css/index.css">
-  </head>
 
-  <body>
+    <!-- Additional Fonts: FontAwesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <!-- JQUERY INITIALIZATION -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <!-- Internationalization Scripts -->
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script> 
     <script type="text/javascript" src="../js/language/languages.js"></script>
-    <script type="text/javascript" src="../js/language/changeLanguage.js"></script>
-
-    <!-- Destination page transitions Scripts -->
-    <script type="text/javascript" src="../js/index.js"></script>
-
+    <script
+      type="text/javascript"
+      src="../js/language/changeLanguage.js">
+    </script>
     <script>
       // Translate page according to default language and setup so that language changes on selection
       initInternationalization();
     </script>
+      
+  </head>
+  <body>
 
-    <!-- Header -->
     <div class="headerContainer">
       <!-- <img src="../images/theflyingdutchman-logo.png" alt="logo" class="logo" /> -->
       <div class="flagContainer">
@@ -42,14 +45,16 @@
     </div>
     <!-- End Header -->
 
-    <!-- Background -->
-    <div class="background">
-    <!-- Buttons -->
-    <div class="divbutton">
-        <button onclick="gotoCustomerPage()" class="button">CUSTOMER</button>
-        <button onclick="gotoBartenderPage()" class="button">BARTENDER</button>
+   <div class="background">
+      <div class="divbutton">
+        <button onclick="myFunction()" class="button">
+          <a id="customerButton" href="customer.html" class="button">Customers</a>
+        </button>
+
+        <button onclick="myFunction()" class="button">
+          <a id="barButton" href="bartender-login.html" class="button">Bartender</a>
+        </button>
+      </div>
     </div>
-    <!-- End Buttons -->
-    </div> <!-- End Background -->
   </body>
 </html>
