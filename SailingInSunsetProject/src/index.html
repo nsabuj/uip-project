@@ -5,12 +5,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="ie-edge" />
+
+    <!-- Generic design for all pages -->
     <link rel="stylesheet" href="../css/design.css">
+    <!-- CSS File for index page-->
     <link rel="stylesheet" href="../css/index.css">
   </head>
-  <body>
 
+  <body>
     <!-- Internationalization Scripts -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script> 
     <script type="text/javascript" src="../js/language/languages.js"></script>
     <script type="text/javascript" src="../js/language/changeLanguage.js"></script>
 
@@ -22,6 +26,7 @@
       initInternationalization();
     </script>
 
+    <!-- Header -->
     <div class="headerContainer">
       <!-- <img src="../images/theflyingdutchman-logo.png" alt="logo" class="logo" /> -->
       <div class="flagContainer">
@@ -37,13 +42,14 @@
     </div>
     <!-- End Header -->
 
-<div class="background">
-  <div class="divbutton">
-
+    <!-- Background -->
+    <div class="background">
+    <!-- Buttons -->
+    <div class="divbutton">
         <button onclick="gotoCustomerPage()" class="button">CUSTOMER</button>
         <button onclick="gotoBartenderPage()" class="button">BARTENDER</button>
-
-      </div>
-  </div>
+    </div>
+    <!-- End Buttons -->
+    </div> <!-- End Background -->
   </body>
 </html>

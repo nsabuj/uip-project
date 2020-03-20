@@ -90,34 +90,12 @@ function updateContent(page) {
             arr[i].style.opacity = 0.5;
         }
     }
-    if (page == "bar.html") {
-        //
-        // Bartender View
-        //
-        // call the updateText function for each item
-        updateText("title");
-        updateText("welcomeMessage");
-        updateText("undoButton");
-        updateText("redoButton");
-        updateText("resetButton");
-        updateText("HistoryBtn");
-        updateText("InventoryBtn");
 
-        // change the menu tab texts
-        updateSection("menuTabs", ["allDrink", "beer", "wine", "spirit"]);
-
-        // change the cashier texts
-        updateSection("cashier", ["cashierText", "checkoutText"]);
-
-        // change the table texts
-        updateSection("table", ["t1Name", "t2Name", "t3Name"]);
-
-        // change order texts
-        updateOrderTexts("order", "orderText");
-    } else {
+    if (page == "customer.html") {
         //
         // Customer View
         //
+        // console.log("This is the customer page");
         updateText("username");
         updateText("password");
         updateText("signin");
@@ -145,11 +123,13 @@ function updateContent(page) {
         updateUndoRedoText("undoButton");
         updateUndoRedoText("redoButton");
     }
+    else{
+        // console.log("This is the index page");
+        updateText("customerButton");
+        updateText("barButton");
 
-
-
+    }
 }
-
 
 /* bartender page */
 $(function() {
