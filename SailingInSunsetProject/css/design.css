@@ -1,13 +1,12 @@
+/*General design propertiesfor headerContainer*/
 .headerContainer {
-    /* background: #31445570; */
-    /* background-image: url("../images/PirateBackground.jpg"); */
-    /* font-family: sans-serif; */
     font-family: Zapf Chancery, cursive;
     line-height: 1.5;
     border-bottom: 0.5px solid #cfcfcf52;
     display: flow-root;
 }
 
+/*General design for language buttons*/
 .flag {
   opacity: 0.5;
   margin-right: 12px;
@@ -30,6 +29,7 @@
   border-left: 3px solid #b65f5f2b;
 }
 
+/*General background properties*/
 body {
     width: 100%;
     height: 400px;

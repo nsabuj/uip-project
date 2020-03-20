@@ -1,3 +1,4 @@
+/* Division for buttons*/
 .divbutton {
     position: fixed;
     width: 100%;
@@ -13,7 +14,7 @@
   background-color:#5f2203;
   border: none;
   float:left;
-  color: white; /* Red color for button caption */
+  color: white;
   padding: 0px 0px;
   text-align: center;
   text-decoration: none;
@@ -30,21 +31,21 @@
 .button:hover {
   opacity: 1;
 }
-
+/* Media queries for smaller tablet screen */
 @media only screen and (max-width: 1300px) {
   .button {
     font-size: 40px;
     overflow: auto;
   }
 }
-
+/* Media queries for smaller tablet screen */
 @media only screen and (max-width: 1024px) {
   .button {
     font-size: 30px;
     overflow: auto;
   }
 }
-
+/* Media queries for smaller tablet screen */
 @media only screen and (max-width: 768px) {
   .button {
     font-size: 20px;
