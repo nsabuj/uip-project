@@ -22,9 +22,6 @@
     <!-- Website Title -->
     <title>The Flying Dutchman</title>
 
-    <!-- Generic design for all pages -->
-    <link rel="stylesheet" href="../css/design.css">
-
     <!-- CSS Files -->
     <link rel="stylesheet" type="text/css" href="../css/customer.css" />
     <!-- <link rel="stylesheet" type="text/css" href="../css/login.css" /> -->
@@ -81,11 +78,11 @@
 
       // Translate page according to default language and setup so that language changes on selection
       initInternationalization();
-
+      
       // Initialize Menu items
       initCustomerMenu();
     </script>
-
+    
   </head>
   <body>
     <!-- Modal -->
@@ -116,7 +113,7 @@
             />
             <p id="error"></p>
             <p id="logged"></p>
-
+           
           </form>
         </div>
 
@@ -165,7 +162,12 @@
           <a href="#"><img class="manImg" src="../images/sweden.png"/></a>
         </span>
       </div>
-
+      <span class="vipButtonContainer">
+        <button id="signout" class="signoutbutton" onclick="signout()"></button>
+      </span>
+      <span class="vipButtonContainer">
+        <button id="vip" class="trigger vipbutton"></button>
+      </span>
     </div>
     <!-- End Header -->
 
